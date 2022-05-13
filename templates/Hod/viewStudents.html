@@ -1,0 +1,73 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="content container-fluid">
+               <div class="page-header">
+                  <div class="row align-items-center">
+                     <div class="col">
+                        <h3 class="page-title">Students</h3>
+                        <ul class="breadcrumb">
+                           <li class="breadcrumb-item"><a href="#">Dashboard</a></li>
+                           <li class="breadcrumb-item active">Students</li>
+                        </ul>
+                     </div>
+                     <div class="col-auto text-right float-right ml-auto">
+                        <a href="#" class="btn btn-outline-primary mr-2"><i class="fas fa-download"></i> Download</a>
+                        <a href="add-student.html" class="btn btn-primary"><i class="fas fa-plus"></i></a>
+                     </div>
+                  </div>
+               </div>
+               <div class="row">
+                  <div class="col-sm-12">
+                     <div class="card card-table">
+                        <div class="card-body">
+                           <div class="table-responsive">
+                              <table class="table table-hover table-center mb-0 datatable">
+                                 <thead>
+                                    <tr>
+                                       <th>ID</th>
+                                       <th>Name</th>
+                                       <th>Class</th>
+                                       <th>DOB</th>
+                                       <th>Phone Number</th>
+                                       <th>Email</th>
+                                       <th>Address</th>
+                                       <th class="text-right">Action</th>
+                                    </tr>
+                                 </thead>
+                                 <tbody>
+
+                                    <tr>
+                                       <td>{{admin.id}}</td>
+                                       <td>
+                                          <h2 class="table-avatar">
+                                             <a href="student-details.html" class="avatar avatar-sm mr-2"><img class="avatar-img rounded-circle" src="/{{i.id.admin.profile_pic}}" alt="User Image"></a>
+                                             <a href="student-details.html">{{i.admin.f_name}} {{i.admin.l_name}} </a>
+                                          </h2>
+                                       </td>
+                                       <td>{{i.class}}</td>
+                                       <td>{{i.dob}}</td>
+                                       <td>{{i.phone}}</td>
+                                       <td>{{i.email}}</td>
+                                       <td>{{i.address}}</td>
+
+                                       <td class="text-right">
+                                          <div class="actions">
+                                             <a href="edit-student.html" class="btn btn-sm bg-success-light mr-2">
+                                             <i class="fas fa-pen"></i>
+                                             </a>
+                                             <a href="#" class="btn btn-sm bg-danger-light">
+                                             <i class="fas fa-trash"></i>
+                                             </a>
+                                          </div>
+                                       </td>
+                                    </tr>
+
+                                 </tbody>
+                              </table>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+{% endblock content %}

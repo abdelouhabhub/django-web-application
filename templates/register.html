@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+{% load static %}
+{% load crispy_forms_tags %}
+<html lang="en">
+   <head>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0">
+      <title>Create an Account!</title>
+      <link rel="stylesheet" href="{% static 'assets/plugins/bootstrap/css/bootstrap.min.css' %}">
+      <link rel="stylesheet" href="{% static 'assets/plugins/fontawesome/css/fontawesome.min.css' %}">
+      <link rel="stylesheet" href="{% static 'assets/plugins/fontawesome/css/all.min.css' %}">
+   </head>
+   <body>
+   {% load crispy_forms_tags %}
+<div class="main-wrapper login-body">
+        <div class="login-wrapper">
+            <div class="container">
+                <div class="loginbox">
+                    <div class="login-right">
+                        <div class="login-right-wrap">
+                            <h1>Register</h1>
+                            <p class="account-subtitle">Access to our dashboard</p>
+                            <form method="POST" class="form-group" name="form">
+                                {% csrf_token %}
+                                {{form|crispy}}
+                                <div class="form-group mb-3">
+                                    <button class="btn btn-primary" type="submit">Register</button>
+                                </div>
+                            </form>
+                            <div class="text-center dont-have">Already have an account? <a href="{% url 'login' %}">Login</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+      <script src="{% static 'assets/js/jquery-3.6.0.min.js' %}"></script>
+      <script src="{% static 'assets/js/popper.min.js' %}"></script>
+      <script src="{% static 'assets/plugins/bootstrap/js/bootstrap.min.js' %}"></script>
+      <script src="{% static 'assets/js/script.js' %}"></script>
+   </body>
+</html>
